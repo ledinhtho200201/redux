@@ -13,7 +13,6 @@ function App() {
       <Header />
       <TabsContent />
       <div>
-
         <div style={{ textAlign: "center" }}>
           <h3>Count = {count}</h3>
           <div>
