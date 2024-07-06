@@ -19,7 +19,7 @@ function Header() {
     return (
         <Navbar className="bg-body-tertiary" data-bs-theme={mode}>
             <Container>
-                <Link to={"/"} className='navbar-brand'>Hỏi Dân IT React - Redux Saga</Link>
+                <Link to={"/"} className='navbar-brand'>React - Redux Saga</Link>
                 <Navbar.Toggle />
                 <Navbar.Collapse className="justify-content-end">
                     <Form.Check
