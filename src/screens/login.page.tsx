@@ -7,10 +7,14 @@ import Col from 'react-bootstrap/Col';
 import { useState } from 'react';
 import Spinner from 'react-bootstrap/Spinner';
 import { Link } from 'react-router-dom';
+import { useAppDispatch } from '../redux/hooks';
+import { loginPending } from '../redux/user/user.slide';
 
 const LoginPage = () => {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
+    const dispatch = useAppDispatch()
+
 
     const handleSubmit = () => {
         if (!email) {
@@ -21,7 +25,7 @@ const LoginPage = () => {
             alert("Empty password @@");
             return;
         }
-        console.log(">>> check submit: ", { email, password })
+        dispatch(loginPending({ email, password }))
     }
 
     return (
@@ -49,7 +53,7 @@ const LoginPage = () => {
                     >
                         Submit
                     </Button>
-                    <Button variant="primary" disabled className='mt-3'>
+                    {/* <Button variant="primary" disabled className='mt-3'>
                         <Spinner
                             as="span"
                             animation="border"
@@ -59,7 +63,7 @@ const LoginPage = () => {
                             aria-hidden="true"
                         />
                         &nbsp; Processing...
-                    </Button>
+                    </Button> */}
                 </Col>
                 <Col xs={12} className='mt-5'>
                     <Link to={"/"}>&lt;= Back home</Link>
